@@ -49,6 +49,36 @@ void CalcSumNegativesIntegers()
 }
 
 
+void CalcProductMinMax() 
+{
+    int startIndex = 0, finishIndex = 0;
+    double maxIntegers = Array[0], minIntegers = Array[0], result = 1;
+
+    for (int i = 0; i < sizeArr; i++)
+    {
+        if (Array[i] > maxIntegers)
+            startIndex = i;
+        else if (Array[i] < minIntegers)
+            finishIndex = i;
+    }
+    
+    int tempIndex = 0;
+    if (startIndex > finishIndex)
+    {
+        tempIndex = startIndex;
+        startIndex = finishIndex;
+        finishIndex = tempIndex;
+    }
+        
+    for (int i = startIndex; i < finishIndex; i++)
+    {
+        result *= Array[i];
+    }
+
+    cout << "Произведение элементов, находящихся между min и max элементами = " << result << endl;
+    cout << "----------------------------------------------------------" << endl;
+}
+
 int main()
 {
     SetConsoleCP(1251);
@@ -57,4 +87,5 @@ int main()
 
     FillArray();
     CalcSumNegativesIntegers();
+    CalcProductMinMax();
 }
