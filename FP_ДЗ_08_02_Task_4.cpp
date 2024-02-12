@@ -48,7 +48,9 @@ void CalcSumNegativesIntegers()
     cout << "----------------------------------------------------------" << endl;
 }
 
-
+/// <summary>
+/// Метод нахождения произведения элементов между min и max
+/// </summary>
 void CalcProductMinMax() 
 {
     int startIndex = 0, finishIndex = 0;
@@ -76,6 +78,20 @@ void CalcProductMinMax()
     }
 
     cout << "Произведение элементов, находящихся между min и max элементами = " << result << endl;
+    cout << "----------------------------------------------------------" << endl;
+}
+
+void ProductOfElementsWithEvenNumbers() 
+{
+    double result = 0;
+
+    for (int i = 0; i < sizeArr; i++)
+    {
+        if (i % 2 == 0)
+            result *= Array[i];
+    }
+
+    cout << "Произведение элементовc чётными номерами: " << result << endl;
     cout << "----------------------------------------------------------" << endl;
 }
 
